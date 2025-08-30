@@ -17,7 +17,7 @@ Results were exported to:
 
 ### Example output (first rows of CSV):
 
-## 📌 Week 2 – Normalization, Deduplication & Visualization
+## Week 2 – Normalization, Deduplication & Visualization
 
 This week we improved data quality and presentation:
 
