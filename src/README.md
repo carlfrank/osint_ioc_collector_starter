@@ -30,7 +30,7 @@ This week we improved data quality and presentation:
 
 ### 🔧 Prereqs (one-time)
 
-From project root (same folder as `README.md`):
+From project root (same folder as ``):
 
 ```bash
 
@@ -251,8 +251,11 @@ China            93
 ...
 📈 Saved output/geo_top_countries.png
 
+<<<<<<< HEAD
 Creates output/geo_top_countries.png
 
+=======
+>>>>>>> 15188cd (Readme Week 3)
 🔹 Outputs Generated
 
 output/iocs_enriched.csv → with indicator, type, source, first_seen, last_seen, category, risk_score
@@ -265,4 +268,8 @@ output/risk_chart.png → IOC distribution by risk score
 
 output/geo_top_countries.png → Top countries for IP indicators
 
+<<<<<<< HEAD
 (optional) output/iocs_<category>.csv → one file per category
+=======
+(optional) output/iocs_<category>.csv → one file per category
+>>>>>>> 15188cd (Readme Week 3)
