@@ -28,8 +28,6 @@ This week we improved data quality and presentation:
 - Wrote split exports by type: `ip`, `domain`, `hash`.
 - Added **verification** (`verify_dedup.py`) and **visualization** (`plot_types.py`, `plot_dedup.py`).
 
----
-
 ### 🔧 Prereqs (one-time)
 
 From project root (same folder as `README.md`):
