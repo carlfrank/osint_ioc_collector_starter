@@ -151,3 +151,120 @@ zazadawg3.comslut.xyz,domain,URLhaus (malicious URLs),2025-08-24 00:04:11,phishi
 ykapi.luyou.360.cn,domain,URLhaus (malicious URLs),2025-08-23 23:59:01,malware_download
 yeklam.com,domain,URLhaus (malicious URLs),2025-08-23 23:58:44,malware_download
 xxx-click.com,domain,URLhaus (malicious URLs),2025-08-23 23:58:21,phishing
+
+## ✅ Week 3 – Enrichment, Risk Scoring & Geolocation
+
+In Week 3 we expanded the IOC Collector with enrichment, a basic risk model, and geolocation.
+
+---
+
+### 🔹 What we added
+- **Aggregation** by `(indicator, type)` with `first_seen` (min) and `last_seen` (max).
+- **Combined source** field (pipe-separated).
+- **Category prioritization** (based on severity order).
+- **Risk scoring model**:
+  - HIGH → Spamhaus source or malware-related (`malware_download`, `malware`, `c2`).
+  - MEDIUM → phishing.
+  - LOW → everything else.
+- **Geolocation for IPs**:
+  - Country, country code, ASN, Org, ISP.
+  - Uses free `ip-api.com` batch endpoint.
+  - Results cached locally in `data/ip_geo_cache.json`.
+- **Visualizations**:
+  - IOC distribution by type (`plot_types.py`).
+  - IOC distribution by risk (`plot_risk.py`).
+  - Top IP countries (`plot_geo.py`).
+- **Optional exports** by category into separate CSVs.
+
+---
+
+### 🔹 Commands & Steps
+
+#### 1) Run enrichment (adds `last_seen`, `category`, `risk_score`)
+```bash
+source .venv/bin/activate
+python enrich.py
+
+Sample output:
+
+[OK] Wrote output/iocs_enriched.csv
+Counts by risk_score:
+low     7284
+high    1548
+
+2) Plot IOC type distribution
+
+python plot_types.py
+
+3) Plot risk score distribution
+
+python plot_risk.py
+
+Creates output/risk_chart.png
+
+4) (Optional) Export by category
+
+python export_by_category.py
+Creates multiple files like:
+
+output/iocs_malware_download.csv
+
+output/iocs_phishing.csv
+
+output/iocs_spam.csv
+
+5) Geolocate IPs
+
+pip install requests pandas
+python geo_enrich_ips.py
+
+Sample output:
+
+[INFO] Unique IPs to lookup: 1545 (cached: 0)
+[OK] Wrote output/iocs_enriched_geo.csv
+Countries (top 10):
+United States    628
+United Kingdom   98
+China            93
+Canada           85
+Japan            83
+Russia           65
+Hong Kong        57
+The Netherlands  53
+Germany          50
+India            29
+
+Results stored in:
+
+output/iocs_enriched_geo.csv
+
+Cache: data/ip_geo_cache.json (used to avoid re-querying IPs)
+
+6) Plot top countries
+
+python plot_geo.py
+
+Sample output:
+
+Top countries:
+United States    628
+United Kingdom   98
+China            93
+...
+📈 Saved output/geo_top_countries.png
+
+Creates output/geo_top_countries.png
+
+🔹 Outputs Generated
+
+output/iocs_enriched.csv → with indicator, type, source, first_seen, last_seen, category, risk_score
+
+output/iocs_enriched_geo.csv → adds geo_country, geo_country_code, geo_as, geo_org, geo_isp
+
+output/types_chart.png → IOC distribution by type
+
+output/risk_chart.png → IOC distribution by risk score
+
+output/geo_top_countries.png → Top countries for IP indicators
+
+(optional) output/iocs_<category>.csv → one file per category
