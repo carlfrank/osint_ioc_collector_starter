@@ -150,9 +150,10 @@ ykapi.luyou.360.cn,domain,URLhaus (malicious URLs),2025-08-23 23:59:01,malware_d
 yeklam.com,domain,URLhaus (malicious URLs),2025-08-23 23:58:44,malware_download
 xxx-click.com,domain,URLhaus (malicious URLs),2025-08-23 23:58:21,phishing
 
-## ✅ Week 3 – Enrichment, Risk Scoring & Geolocation
+## Week 3 – Enrichment, Risk Scoring & Geolocation
 
 In Week 3 we expanded the IOC Collector with enrichment, a basic risk model, and geolocation.
+
 
 ---
 
