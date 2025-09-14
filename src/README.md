@@ -95,3 +95,34 @@ In Week 3 we expanded the IOC Collector with enrichment, a risk model, and geolo
 
 - `output/types_chart.png`  
 - `output/dedup_chart.png`  
+
+## Week 4 – Mock Reputation & Confidence (No API)
+
+En la última fase extendimos el colector con **mock enrichment** (sin APIs externas).  
+Todo el enriquecimiento es simulado para cumplir con la regla original: *no external API keys required*.  
+
+---
+
+### 🔍 What we added
+
+- **Reputation score (mock)**  
+  - Columna `reputation_score` (0–100) generada internamente.  
+  - Columna `confidence`:  
+    - HIGH → score > 80  
+    - MEDIUM → 60–80  
+    - LOW → < 60  
+
+- **Tags (mock)**  
+  - Ejemplos de etiquetas: `malware_family=trickbot`, `phishing`.  
+  - Solo con fines de demo, no reales.  
+
+- **Export improvements**  
+  - Nuevo dataset enriquecido → `output/iocs_enriched.csv`.  
+  - Incluye: `indicator, type, source, first_seen, last_seen, category, risk_score, reputation_score, confidence, tags`.  
+
+---
+
+### Run
+
+```bash
+python src/enrich.py
