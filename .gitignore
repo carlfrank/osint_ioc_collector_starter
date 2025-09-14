@@ -1,0 +1,30 @@
+# --- Python cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Editors / SO ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Project outputs & caches ---
+output/
+data/ip_geo_cache.json
+data/ti_cache.json
+
+# --- Logs / temp ---
+*.log
+*.tmp
+*.bak
+*~

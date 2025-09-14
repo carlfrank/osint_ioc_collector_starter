@@ -1,0 +1,5 @@
+# Spamhaus DROP (sample)
+# 2025-08-23
+192.0.2.0/24 ; TEST-NET-1 sample entry
+198.51.100.0/24 ; TEST-NET-2 sample entry
+203.0.113.0/24 ; TEST-NET-3 sample entry

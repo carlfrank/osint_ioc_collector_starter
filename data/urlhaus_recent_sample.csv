@@ -1,0 +1,4 @@
+# URLhaus CSV (sample) - only first few lines
+# id,dateadded,url,url_status,threat,urlhaus_link,reporter
+1,2025-08-22,https://bad.example.com/login,online,phishing,https://urlhaus.abuse.ch/url/1/,tester
+2,2025-08-23,http://mal.example.org/update.exe,offline,malware_download,https://urlhaus.abuse.ch/url/2/,tester
