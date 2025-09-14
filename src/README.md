@@ -1,5 +1,13 @@
 # IOC Collector – OSINT Project
 
+## 📂 Output Files Notice
+
+The `output/` directory is intentionally excluded from version control.  
+Generated artifacts such as CSVs, JSONs, and PNG charts are **not stored in the repository**.  
+To see results, you must run the provided scripts locally.  
+
+Each week’s section in this README includes the commands needed to reproduce the outputs.
+
 ## Week 1 – Initial Setup & Collection
 
 During the first week, I set up and executed the IOC Collector.  
