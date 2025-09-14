@@ -1,3 +1,10 @@
+## 📂 Additional Documentation
+
+For more technical details, including notes about the enrichment process, risk scoring logic, 
+and internal development guidelines, please refer to the 
+[`src/README.md`](src/README.md).
+
+
 # OSINT IOC Collector (Starter)
 
 A safe, weekend-friendly project that fetches **Indicators of Compromise (IOCs)** from public feeds (no API keys), 
